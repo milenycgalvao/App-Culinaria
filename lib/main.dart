@@ -1,3 +1,4 @@
+import 'package:culinaria/screens/categories_meals_screen.dart';
 import 'package:culinaria/screens/categories_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
             fontFamily: 'RobotoCondensed',
           ))),
       home: const CategoriesScreen(),
+      routes: {
+        '/categories-meals': (ctx) => const CategoriesMealsScreen(),
+      },
     );
   }
 }
