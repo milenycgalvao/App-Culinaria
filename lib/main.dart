@@ -1,3 +1,4 @@
+import 'package:culinaria/routes/app_routes.dart';
 import 'package:culinaria/screens/categories_meals_screen.dart';
 import 'package:culinaria/screens/categories_screen.dart';
 import 'package:flutter/material.dart';
@@ -27,9 +28,10 @@ class MyApp extends StatelessWidget {
               headline6: TextStyle(
             fontFamily: 'RobotoCondensed',
           ))),
-      home: const CategoriesScreen(),
       routes: {
-        '/categories-meals': (ctx) => const CategoriesMealsScreen(),
+        //nao é necessario criar outro arquivo porem tem menos chance de dar erro de digitacao no codigo
+        AppRoutes.HOME: (ctx) => const CategoriesScreen(),
+        AppRoutes.CATEGORIES_MEALS: (ctx) => const CategoriesMealsScreen(),
       },
     );
   }
