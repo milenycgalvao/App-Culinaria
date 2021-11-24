@@ -1,3 +1,6 @@
+// ignore_for_file: unused_local_variable
+
+import 'package:culinaria/data/dummy_data.dart';
 import 'package:culinaria/models/category.dart';
 import 'package:flutter/material.dart';
 
@@ -10,14 +13,18 @@ class CategoriesMealsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final category = ModalRoute.of(context)!.settings.arguments as Category;
 
+    final categoryMeals = DUMMY_MEALS
+        .where((meal) => meal.categories.contains(category.id))
+        .toList();
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(category.title),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text('tela provisoria: receitas por categoria'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text(category.title),
+          centerTitle: true,
+        ),
+        body: ListView.builder(
+          itemCount: categoryMeals.length,
+          itemBuilder: (ctx, index) => Text(categoryMeals[index].title),
+        ));
   }
 }
