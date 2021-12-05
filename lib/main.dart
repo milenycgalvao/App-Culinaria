@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
           colorScheme: theme.colorScheme.copyWith(
-            primary: Colors.pink.shade400,
+            primary: Colors.red.shade700,
             secondary: Colors.amber,
           ),
           canvasColor: const Color.fromRGBO(255, 254, 229, 1),

@@ -1,5 +1,6 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:culinaria/components/meal_item.dart';
 import 'package:culinaria/data/dummy_data.dart';
 import 'package:culinaria/models/category.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class CategoriesMealsScreen extends StatelessWidget {
         ),
         body: ListView.builder(
           itemCount: categoryMeals.length,
-          itemBuilder: (ctx, index) => Text(categoryMeals[index].title),
+          itemBuilder: (ctx, index) => MealItem(categoryMeals[index]),
         ));
   }
 }
